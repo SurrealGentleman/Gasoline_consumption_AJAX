@@ -1,4 +1,4 @@
-<?
+<?php
 	class car
 	{
 		protected $conn;
@@ -6,7 +6,7 @@
 		{
 			$this->conn = new PDO("mysql:host=хост; dbname=названиеБД", "логин", "пароль");
 		}
-
+	
 		function DB_view_car()
 		{
 			$result = $this->conn->query("SELECT Вид_транспорта FROM transport");
@@ -14,7 +14,7 @@
 				echo $value[0].', ';
 			}
 		}
-
+	
 		function DB_model_car($view)
 		{
 			$result = $this->conn->query("SELECT Марка_автомобиля FROM transport WHERE Вид_транспорта = '$view'");
@@ -22,7 +22,7 @@
 				echo $value[0].', ';
 			}
 		}
-
+	
 		function formula($model, $distance)
 		{
 			if (is_numeric($distance) && $distance>=0) {
@@ -36,7 +36,7 @@
 				echo "Ошибка: Проверьте данные!";
 			}
 		}
-
+	
 		function _destruct()
 		{
 			$this->conn->close();
