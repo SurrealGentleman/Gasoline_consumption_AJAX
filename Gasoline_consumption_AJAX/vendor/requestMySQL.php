@@ -1,4 +1,4 @@
-<?
+<?php
 	require_once('car_class.php');
 	if (isset($_GET['view'])) {
 		if ($_GET['view'] == '') {
